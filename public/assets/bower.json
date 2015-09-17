@@ -1,0 +1,21 @@
+{
+  "name": "schwachofer",
+  "version": "0.0.1",
+  "homepage": "https://github.com/stefferd/schwachofer",
+  "authors": [
+    "Stef van den Berg <stef@debmedia.nl>"
+  ],
+  "description": "Website for Schwachofer stucadoors",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.2",
+    "requirejs": "~2.1.20"
+  }
+}
