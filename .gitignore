@@ -3,6 +3,8 @@ vendor
 log
 backup
 prototype
+/public/assets/node_modules
+/public/assets/libs
 _ide_helper.php
 composer.phar
 CONTRIBUTING.md

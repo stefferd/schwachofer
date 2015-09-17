@@ -7,6 +7,6 @@
  */
 
 return array(
-    'customer' => 'Superstalling',
-    'customer_url' => 'superstalling.nl'
+    'customer' => 'Schwachofer',
+    'customer_url' => 'Schwachofer.nl'
 );

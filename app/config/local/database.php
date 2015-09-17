@@ -23,7 +23,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => '127.0.0.1',
-			'database'  => 'superstalling',
+			'database'  => 'schwachofer',
 			'username'  => 'root',
 			'password'  => 'root',
 			'charset'   => 'utf8',
