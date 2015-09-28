@@ -22,6 +22,15 @@ class Page extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var array
 	 */
 	protected $hidden = array();
-	public $children;
+
+	public function parent()
+	{
+		return $this->belongsTo('Page', 'parent_id');
+	}
+
+	public function children()
+	{
+		return $this->hasMany('Page', 'parent_id');
+	}
 
 }
