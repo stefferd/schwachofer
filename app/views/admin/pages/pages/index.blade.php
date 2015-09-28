@@ -53,8 +53,8 @@
                         </div>
                     </td>
                 </tr>
-                @if (count($page->children()) > 0)
-                    @foreach($page->children() as $child)
+                @if (count($page->children()->get()) > 0)
+                    @foreach($page->children()->get() as $child)
                         <tr class="children">
                             <td>{{$child->id}}</td>
                             <td>{{$child->title}}</td>
