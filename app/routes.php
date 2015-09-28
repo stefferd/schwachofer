@@ -81,6 +81,13 @@ Route::group(['prefix' => 'admin', 'before' => 'auth'], function() {
         Route::get('/{id}/edit/', ['as' => 'admin.settings.edit', 'uses' => 'SettingsController@edit']);
         Route::post('/{id}/edit/', ['as' => 'admin.settings.update', 'uses' => 'SettingsController@update']);
     });
+
+    /* Admin : offer */
+    Route::group(['prefix' => 'offers'], function() {
+        Route::get('/', ['as' => 'admin.offer.index', 'uses' => 'OfferController@index']);
+        Route::get('/{id}/view/', ['as' => 'admin.offer.view', 'uses' => 'OfferController@view']);
+        Route::post('/{id}/edit/', ['as' => 'admin.offer.update', 'uses' => 'OfferController@update']);
+    });
 });
 
 //Route::get('/install', function() {
@@ -104,6 +111,8 @@ Route::get('/inventory/{filter}/{value}', ['as' => 'front.inventory.prefilter', 
 Route::get('/newsletter/unsubscribe/{user}', ['as' => 'front.newsletter.unsubscribe', 'uses' => 'FrontController@unsubscribe']);
 Route::post('/subscribe', ['as' => 'front.newsletter', 'uses' => 'FrontController@subscribe']);
 Route::post('/contact', ['as' => 'front.contact', 'uses' => 'FrontController@contact']);
+Route::get('/offerte-aanvragen', ['as' => 'front.offer', 'uses' => 'FrontController@offer']);
+Route::post('/offerte-aanvragen', ['as' => 'front.sendOffer', 'uses' => 'FrontController@sendOffer']);
 Route::get('/{pageName}', ['as' => 'front.page', 'uses' => 'FrontController@page', 'except' => 'admin, install, inventory, newsubscription, newsletter']);
 
 // ===============================================
