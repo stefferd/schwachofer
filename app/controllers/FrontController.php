@@ -19,14 +19,14 @@ class FrontController extends BaseController {
 	{
         $page = Page::find(1);
 
-        $menuItems = Page::all();
+        $menuItems = Page::where('parent_id', 0)->get();
         $news = News::with('user')->orderBy('created_at', 'desc')->first();
 		return View::make('front.pages.index')->with(['page' => $page, 'news' => $news, 'menuitems' => $menuItems]);
 	}
 
     public function page($pageName) {
         $page = Page::where('slug', 'LIKE', $pageName)->first();
-        $menuItems = Page::all();
+        $menuItems = Page::where('parent_id', 0)->get();
         return View::make('front.pages.page')->with(['page' => $page, 'menuitems' => $menuItems]);
     }
 
