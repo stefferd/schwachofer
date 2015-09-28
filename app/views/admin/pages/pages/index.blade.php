@@ -52,8 +52,37 @@
                             @endif
                         </div>
                     </td>
-
                 </tr>
+                @if ($page->children)
+                    @foreach($page->children as $child)
+                        <tr class="children">
+                            <td>{{$child->id}}</td>
+                            <td>{{$child->title}}</td>
+                            <td>
+                                @if ($child->active == 1)
+                                    {{ Lang::get('pages.active_true') }}
+                                @else
+                                    {{ Lang::get('pages.active_false') }}
+                                @endif</td>
+                            <td>{{$child->created_at}}</td>
+                            <td>{{$child->updated_at}}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a class="btn btn-xs btn-default" href="{{ URL::route('admin.pages.edit', array('id' => $child->id)) }}">{{ Lang::get('admin.action_edit') }}</a>
+                                    @if (Auth::user()->level >= 2)
+                                        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="{{ URL::route('admin.pages.delete', array('id' => $child->id)) }}">{{ Lang::get('admin.action_delete') }}</a></li>
+                                        </ul>
+                                    @endif
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                @endif
             @endforeach
         </tbody>
     </table>
