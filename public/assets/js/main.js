@@ -1,5 +1,5 @@
 requirejs.config({
-  baseUrl: 'assets/js/'
+  baseUrl: 'public/assets/js/'
 });
 
 // Start loading the main app file. Put all of

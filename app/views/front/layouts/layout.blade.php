@@ -6,29 +6,29 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('public/assets/css/style.css') }}" />
 </head>
 <body class="{{$page->title}}">
-    <section class="hero">
-        <div class="row">
-            <div class="large-12 columns">
-                <div class="main-wrapper">
-                    <h1>Schwach&ouml;fer</h1>
-                    <h3>stucadoorsbedrijf Vof</h3>
-                </div>
-                <hr />
-                <div class="row">
-                    <div class="large-6 columns large-centered">
-                        <ul class="button-group even-4">
-                            @foreach($menuitems as $menu)
-                                <li>
-                                    <a href="{{ $menu->slug }}" title="{{$menu->title}}" class="button">
-                                        {{$menu->title}}
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
+    <div data-magellan-expedition="fixed">
+        <div class="large-12 columns">
+            <div class="main-wrapper">
+                <h1>Schwach&ouml;fer</h1>
+                <h3>stucadoorsbedrijf Vof</h3>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="large-12 columns large-centered">
+                    <ul class="button-group even-4">
+                        @foreach($menuitems as $menu)
+                            <li>
+                                <a href="{{ $menu->slug }}" title="{{$menu->title}}" class="button">
+                                    {{$menu->title}}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
+    <section class="hero">
         <div class="row">
             <div class="large-6 columns about-box">
                 <div class="black-box">

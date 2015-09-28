@@ -3,5 +3,7 @@
         <!-- footer-->
     </div>
 </footer>
-<script data-main="{{ URL::asset('assets/js/main') }}"
-        src="{{ URL::asset('assets/libs/requirejs/require.js') }}"></script>
+<script src="{{ URL::asset('public/assets/libs/foundation/js/foundation/foundation.js') }}"></script>
+<script src="{{ URL::asset('public/assets/libs/foundation/js/foundation/foundation.magellan.js') }}"></script>
+<script data-main="{{ URL::asset('public/assets/js/main') }}"
+        src="{{ URL::asset('public/assets/libs/requirejs/require.js') }}"></script>
