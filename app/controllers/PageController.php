@@ -3,9 +3,9 @@
 class PageController extends BaseController {
 
     public function index() {
-        $pages = Page::where('parent_id', 0);
+        $pages = Page::where('parent_id', 0)->all();
         foreach($pages as $page) {
-            $childrenPages = Page::where('parent_id', $page->id);
+            $childrenPages = Page::where('parent_id', $page->id)->all();
             $pages->children = $childrenPages;
         }
         return View::make('admin.pages.pages.index')->with(['pages' => $pages]);
