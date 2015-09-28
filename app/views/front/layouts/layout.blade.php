@@ -40,13 +40,16 @@
         </div>
     </section>
     @if ($page->title == 'Home')
-        <section class="hero-content">
+        <section role="main">
             <div class="row">
-                <!-- home content -->
+                <div class="large-12 columns">
+                    <h1>@yield('title')</h1>
+                    @yield('content')
+                </div><!-- /.col-md-4 -->
             </div>
         </section>
     @else
-        <section>
+        <section role="main">
             <div class="row">
                 <div class="col-md-12">
                     <h1>@yield('title')</h1>
