@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-    {{ Form::model($page, array('route' => array('admin.pages.create', $page->id))) }}
+    {{ Form::model($page, array('route' => array('admin.pages.create'))) }}
     <div class="col-xs-12">
         <div class="form-group">
             <a class="open">Edit meta data</a>
