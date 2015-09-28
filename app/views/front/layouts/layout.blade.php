@@ -20,7 +20,7 @@
                             </a>
                             @if (count($menu->children()->get()) > 0)
                                 <ul class="children">
-                                @foreach ($menu->children()->get() as $child))
+                                @foreach ($menu->children()->get() as $child)
                                     <li>
                                         <a href="{{ $child->slug }}" title="{{$child->title}}" class="button">
                                             {{$child->title}}
