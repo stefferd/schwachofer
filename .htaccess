@@ -1,0 +1,5 @@
+# Handle Front Controller...
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !\.(png|gif|jpg|css|js|ico)$
+RewriteCond %{REQUEST_URI} !^public
+RewriteRule ^(.*)$ public/$1 [L]
