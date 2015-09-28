@@ -8,3 +8,6 @@
 <script src="{{ URL::asset('public/assets/libs/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ URL::asset('public/assets/libs/foundation/js/foundation/foundation.js') }}"></script>
 <script src="{{ URL::asset('public/assets/libs/foundation/js/foundation/foundation.magellan.js') }}"></script>
+<script>
+    $(document).foundation();
+</script>
