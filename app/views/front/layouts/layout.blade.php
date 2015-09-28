@@ -8,7 +8,8 @@
 <body class="{{$page->title}}">
     <div data-magellan-expedition="fixed" class="sticky-header">
             <div class="main-wrapper">
-                <div class="logo">Schwachofer stucadoorsbedrijf</div>
+                <div class="logo"></div>
+                <div class="slogan">Drie generaties vakwerk</div>
             </div>
             <div>
                 <ul class="button-group even-4">
