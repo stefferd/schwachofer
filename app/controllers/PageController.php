@@ -4,11 +4,7 @@ class PageController extends BaseController {
 
     public function index() {
         $pages = Page::where('parent_id', '=', 0)->get();
-        foreach($pages as $page) {
-            $childrenPages = Page::where('parent_id', '=', $page->id)->get();
-            $pages->children = $childrenPages;
-            print_r($pages->children);
-        }
+        echo $pages->toJson();
         return View::make('admin.pages.pages.index')->with(['pages' => $pages]);
     }
 
