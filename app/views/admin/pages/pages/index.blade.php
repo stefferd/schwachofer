@@ -53,7 +53,7 @@
                         </div>
                     </td>
                 </tr>
-                @if ($page->children)
+                @if ($page->children !== null)
                     @foreach($page->children as $child)
                         <tr class="children">
                             <td>{{$child->id}}</td>
