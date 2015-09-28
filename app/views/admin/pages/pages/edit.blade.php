@@ -58,7 +58,7 @@
         </div>
     </div>
     {{ Form::close() }}
-    <script type="text/javascript" src="{{ URL::asset('assets/js/ckeditor/ckeditor.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('public/assets/js/ckeditor/ckeditor.js') }}"></script>
     <script>
         // Replace the <textarea id="editor1"> with a CKEditor
         // instance, using default configuration.
