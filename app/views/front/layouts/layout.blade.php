@@ -17,10 +17,13 @@
                 <div class="row">
                     <div class="large-6 columns large-centered">
                         <ul class="button-group even-4">
-                            <li><a href="#" class="button">Home</a></li>
-                            <li><a href="#" class="button">About</a></li>
-                            <li><a href="#" class="button">Adopt</a></li>
-                            <li><a href="#" class="button">Contact</a></li>
+                            @foreach($menuitems as $menu)
+                                <li>
+                                    <a href="{{ $menu->slug }}" title="{{$menu->title}}" class="button">
+                                        {{$menu->title}}
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

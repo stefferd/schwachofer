@@ -18,13 +18,16 @@ class FrontController extends BaseController {
 	public function index()
 	{
         $page = Page::find(1);
+
+        $menuItems = Page::all();
         $news = News::with('user')->orderBy('created_at', 'desc')->first();
-		return View::make('front.pages.index')->with(['page' => $page, 'news' => $news]);
+		return View::make('front.pages.index')->with(['page' => $page, 'news' => $news, 'menuitems' => $menuItems]);
 	}
 
     public function page($pageName) {
         $page = Page::where('slug', 'LIKE', $pageName)->first();
-        return View::make('front.pages.page')->with(['page' => $page]);
+        $menuItems = Page::all();
+        return View::make('front.pages.page')->with(['page' => $page, 'menuitems' => $menuItems]);
     }
 
     public function subscribe() {
@@ -52,6 +55,7 @@ class FrontController extends BaseController {
 
         $slug = 'contact';
         $page = Page::where('slug', 'LIKE', $slug)->first();
+
 
         $validator = Validator::make(Input::all(), $rules);
         if ($validator->fails()) {
