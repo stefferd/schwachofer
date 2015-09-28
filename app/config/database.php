@@ -56,7 +56,7 @@ return array(
 			'driver'    => 'mysql',
 			'host'      => '127.0.0.1',
 			'database'  => 'schwachofer',
-			'username'  => 'schwachofer_admin',
+			'username'  => 'schwachofer_admi',
 			'password'  => 't9y9N73YZq',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
