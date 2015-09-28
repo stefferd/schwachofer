@@ -8,10 +8,8 @@
 <body class="{{$page->title}}">
     <div data-magellan-expedition="fixed" class="sticky-header">
             <div class="main-wrapper">
-                <h1>Schwach&ouml;fer</h1>
-                <h3>stucadoorsbedrijf Vof</h3>
+                <div class="logo">Schwachofer stucadoorsbedrijf</div>
             </div>
-            <hr />
             <div>
                 <ul class="button-group even-4">
                     @foreach($menuitems as $menu)
