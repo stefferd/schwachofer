@@ -22,5 +22,6 @@ class Page extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var array
 	 */
 	protected $hidden = array();
+	public $children;
 
 }
