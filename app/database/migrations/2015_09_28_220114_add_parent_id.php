@@ -5,7 +5,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class AddParentId extends Migration {
 
-	private $tableName = 'pages';
+	private $tableName = 'page';
 	/**
 	 * Run the migrations.
 	 *
