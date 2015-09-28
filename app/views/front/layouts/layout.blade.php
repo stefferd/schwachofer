@@ -2,8 +2,8 @@
 <html lang="nl">
 <head>
     @include('front.includes.head')
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/libs/foundation/css/foundation.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('public/assets/libs/foundation/css/foundation.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('public/assets/css/style.css') }}" />
 </head>
 <body class="{{$page->title}}">
     <section class="hero">
