@@ -1,0 +1,100 @@
+html, body {
+    border-top: 10px solid #D9125D;
+    background: #DDD;
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    color: #CDCDCD;
+}
+
+a {
+    cursor: pointer;
+}
+
+.login-box {
+    border: 1px solid #CDCDCD;
+    background: #FFF;
+    padding: 20px;
+}
+
+.navigation {
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+.navigation ul {
+    list-style: none inside none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.navigation .navigation-bottom {
+    bottom: 0;
+    position: absolute;
+}
+.navigation .navigation-top .active {
+    border-right: 2px solid #D9125D;
+}
+
+.navigation ul li {
+    width: 100%;
+    border-bottom: 1px solid #CDCDCD;
+    background: #FFF;
+    text-indent: 25px;
+    font-size: 16px;
+    line-height: 40px;
+    border-right: 2px solid transparent;
+}
+
+/* Panels */
+.panel-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #FFF;
+    border-right: 1px solid #CDCDCD;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.panel-main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 250px;
+    min-width: 750px;
+    height: 100%;
+    background-color: #EFEFEF;
+    overflow: auto;
+}
+
+.panel-right {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -340px;
+    width: 300px;
+    height: 100%;
+    background-color: #FFF;
+    border-left: 1px solid #CDCDCD;
+    overflow: auto;
+    padding: 20px;
+    /*
+    must have a higher z-index than panel-main,
+    needed when panel-right hovers panel-main
+    */
+    z-index: 10;
+    transition: all 0.2s ease-in-out;
+}
+
+.panel-right.show {
+    transform: translateX(0);
+    box-shadow: 0 0 6px rgba(0,0,0,0.25);
+    right: 0;
+}
