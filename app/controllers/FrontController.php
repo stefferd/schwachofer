@@ -24,11 +24,17 @@ class FrontController extends BaseController {
 		return View::make('front.pages.index')->with(['page' => $page, 'news' => $news, 'menuitems' => $menuItems]);
 	}
 
-    public function page($pageName) {
-        $page = Page::where('slug', 'LIKE', $pageName)->first();
+    public function page($slug) {
+        $page = Page::where('slug', 'LIKE', $slug)->firstOrFail();
         $menuItems = Page::where('parent_id', 0)->get();
-        return View::make('front.pages.page')->with(['page' => $page, 'menuitems' => $menuItems]);
+        return View::make('front.pages.page')->with(['page' => $page, 'slug' => $slug, 'menuitems' => $menuItems]);
     }
+	
+	public function pageWithParent($parent, $slug) {
+		$page = Page::where('slug', 'LIKE', $slug)->firstOrFail();
+        $menuItems = Page::where('parent_id', 0)->get();
+        return View::make('front.pages.page')->with(['page' => $page, 'menuitems' => $menuItems, 'slug' => $slug, 'parent' => $parent]);
+	}
 
     public function subscribe() {
         $rules = array(

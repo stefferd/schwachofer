@@ -113,7 +113,8 @@ Route::post('/subscribe', ['as' => 'front.newsletter', 'uses' => 'FrontControlle
 Route::post('/contact', ['as' => 'front.contact', 'uses' => 'FrontController@contact']);
 Route::get('/offerte-aanvragen', ['as' => 'front.offer', 'uses' => 'FrontController@offer']);
 Route::post('/offerte-aanvragen', ['as' => 'front.sendOffer', 'uses' => 'FrontController@sendOffer']);
-Route::get('/{pageName}', ['as' => 'front.page', 'uses' => 'FrontController@page', 'except' => 'admin, install, inventory, newsubscription, newsletter']);
+Route::get('/{slug}', ['as' => 'front.page', 'uses' => 'FrontController@page', 'except' => 'admin, install, inventory, newsubscription, newsletter']);
+Route::get('/{parent}/{slug}', ['as' => 'front.page', 'uses' => 'FrontController@pageWithParent', 'except' => 'admin, install, inventory, newsubscription, newsletter']);
 
 // ===============================================
 // 404 ===========================================

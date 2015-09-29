@@ -7,33 +7,38 @@
 </head>
 <body class="{{$page->title}}">
     <div data-magellan-expedition="fixed" class="sticky-header">
-            <div class="main-wrapper">
-                <div class="logo"></div>
-                <div class="slogan">Drie generaties vakwerk</div>
-            </div>
-            <div>
-                <ul class="button-group even-4">
-                    @foreach($menuitems as $menu)
-                        <li>
-                            <a href="{{ $menu->slug }}" title="{{$menu->title}}" class="button">
-                                {{$menu->title}}
-                            </a>
-                            @if (count($menu->children()->get()) > 0)
-                                <ul class="children">
-                                @foreach ($menu->children()->get() as $child)
-                                    <li>
-                                        <a href="{{ $child->slug }}" title="{{$child->title}}" class="button">
-                                            {{$child->title}}
-                                        </a>
-                                    </li>
-                                @endforeach
-                                </ul>
-                            @endif
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-    </div>
+		<div class="main-wrapper">
+			<div class="logo"></div>
+		</div>
+		<nav class="top-bar" data-topbar role="navigation">
+			<section class="top-bar-section">
+				<ul>
+					@foreach($menuitems as $menu)
+						@if (count($menu->children()->get()) > 0)
+							<li class="has-dropdown">
+						@else
+							<li>
+						@endif
+							<a href="/{{ $menu->slug }}" title="{{$menu->title}}" class="button">
+								{{$menu->title}}
+							</a>
+							@if (count($menu->children()->get()) > 0)
+								<ul class="dropdown">
+								@foreach ($menu->children()->get() as $child)
+									<li>
+										<a href="/{{ $menu->slug }}/{{ $child->slug }}" title="{{$child->title}}" class="button">
+											{{$child->title}}
+										</a>
+									</li>
+								@endforeach
+								</ul>
+							@endif
+						</li>
+					@endforeach
+				</ul>
+			</section>
+		</nav>
+	</div>
     <section class="hero">
         <div class="row">
             <div class="large-6 columns about-box">

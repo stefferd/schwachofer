@@ -9,10 +9,13 @@
 @section('title'){{ $page->title }}@stop
 
 @section('content')
-    <ol class="breadcrumb">
-      <li><a href="/" title="Superstalling">Home</a></li>
+    <ul class="breadcrumbs">
+      <li><a href="/" title="Schwachofer stucadoorsbedrijf">Home</a></li>
+	  @if (isset($parent)) 
+		  <li><a href="/{{$parent}}" title="{{$parent}}">{{$parent}}</a></li>
+	  @endif
       <li class="active">{{ $page->title }}</li>
-    </ol>
+    </ul>
     {{ $page->content }}
 @stop
 
