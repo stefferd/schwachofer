@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="nl">
 <head>
     @include('front.includes.head')
@@ -21,7 +21,8 @@
 						@endif
 							<a href="/{{ $menu->slug }}" title="{{$menu->title}}" class="button">
 								{{$menu->title}}
-                                @if (count($menu->children()->get()) > 0)
+							</a>
+ @if (count($menu->children()->get()) > 0)
                                     <ul class="dropdown">
                                         @foreach ($menu->children()->get() as $child)
                                             <li>
@@ -32,7 +33,6 @@
                                         @endforeach
                                     </ul>
                                 @endif
-							</a>
 						</li>
 					@endforeach
 				</ul>
